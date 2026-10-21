@@ -1,0 +1,545 @@
+/* Solicitudes de contacto (T18): complementa Directory.module.css con el mismo lenguaje visual. */
+
+/* Formulario de envío en la ficha */
+.requestBox {
+  display: grid;
+  min-width: 0;
+  margin: 0 0 1.5rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 12px;
+  background: var(--blue-pale);
+  gap: 0.85rem;
+}
+
+.requestBox h2 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+.requestBox p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.requestForm {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.requestForm > .wide,
+.requestForm > .formActions {
+  grid-column: 1 / -1;
+}
+
+.requestForm textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 7.5rem;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--dark);
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.requestForm textarea[aria-invalid="true"] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px var(--red);
+}
+
+.formActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.formActions p {
+  font-size: 0.74rem;
+}
+
+/* Bandejas */
+.tabs {
+  display: flex;
+  margin: 0 0 1rem;
+  border-bottom: 1px solid var(--gray-pale);
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tab {
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--gray);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab[aria-selected="true"] {
+  border-bottom-color: var(--blue);
+  color: var(--dark);
+}
+
+.tabPanel {
+  display: grid;
+  min-width: 0;
+  gap: 1rem;
+}
+
+.tabPanel > div > h2 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.toolbar {
+  display: flex;
+  margin: 0 0 1rem;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem 1rem;
+}
+
+.toolbar > div {
+  width: min(100%, 260px);
+}
+
+.requestList {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.85rem;
+}
+
+.requestCard {
+  display: grid;
+  min-width: 0;
+  padding: 1.1rem;
+  border: 1px solid var(--gray-pale);
+  border-radius: 12px;
+  background: #fff;
+  gap: 0.7rem;
+}
+
+.requestHeader {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+}
+
+.requestHeader > div {
+  display: grid;
+  min-width: 0;
+  gap: 0.25rem;
+}
+
+.requestHeader h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+.requestHeader p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.74rem;
+}
+
+.counterpartMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+}
+
+.service {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--dark);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.status {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 999px;
+  background: #f8fafc;
+  color: var(--dark);
+  font-size: 0.74rem;
+  font-weight: 700;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.status[data-status="pending"] {
+  border-color: #c2410c;
+  background: var(--orange-dim);
+  color: #9a3412;
+}
+
+.status[data-status="accepted"] {
+  border-color: #15803d;
+  background: var(--green-dim);
+  color: #166534;
+}
+
+.status[data-status="rejected"] {
+  border-color: #b91c1c;
+  background: var(--red-dim);
+  color: #b91c1c;
+}
+
+.status[data-status="expired"],
+.status[data-status="cancelled"] {
+  border-color: var(--gray-light);
+  background: var(--gray-pale);
+  color: #374151;
+}
+
+.expiry {
+  margin: 0;
+  color: #9a3412;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.rowFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+}
+
+/* Detalle */
+.detailLayout {
+  display: grid;
+  margin: 1.25rem 0 0;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 1rem;
+}
+
+.detailColumn {
+  display: grid;
+  min-width: 0;
+  gap: 1rem;
+}
+
+.section {
+  display: grid;
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid var(--gray-pale);
+  border-radius: 12px;
+  background: #f3f6fa;
+  align-content: start;
+  gap: 0.8rem;
+}
+
+.section h2 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.section h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--dark);
+  font-size: 0.88rem;
+}
+
+.section p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.serviceText {
+  margin: 0;
+  color: var(--dark) !important;
+  white-space: pre-wrap;
+}
+
+.headerRow {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+.headerRow > div {
+  min-width: 0;
+}
+
+.note {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 10px;
+  background: var(--blue-pale);
+  color: #1e3a8a !important;
+}
+
+.history {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.55rem;
+}
+
+.history li {
+  display: grid;
+  min-width: 0;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--gray-light);
+  gap: 0.1rem;
+}
+
+.history strong {
+  color: var(--dark);
+  font-size: 0.8rem;
+}
+
+.history time {
+  color: var(--gray);
+  font-size: 0.74rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.outcome {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.outcome[data-tone="success"] {
+  border: 1px solid rgba(21, 128, 61, 0.35);
+  background: var(--green-dim);
+  color: #166534;
+}
+
+.outcome[data-tone="conflict"],
+.outcome[data-tone="warning"] {
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.outcome p {
+  margin: 0;
+}
+
+.outcome button {
+  margin-top: 0.6rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0.75rem;
+}
+
+.contactCard {
+  display: grid;
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid var(--gray-pale);
+  border-radius: 10px;
+  background: #fff;
+  gap: 0.5rem;
+}
+
+/* Las tarjetas de contacto son angostas (dos por fila desde 2×220px): con la grilla
+   etiqueta | valor de `.facts`, el email quedaba partido en 5–6 líneas. Se apila. */
+.contactCard dl > div {
+  grid-template-columns: 1fr;
+  gap: 0.15rem;
+}
+
+.contactCard a {
+  display: inline-flex;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+  color: #1d4ed8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  align-items: center;
+  word-break: break-word;
+}
+
+.ghostButton,
+.confirmButton,
+.dangerButton {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ghostButton {
+  border-color: var(--gray-light);
+  background: #fff;
+  color: var(--dark);
+}
+
+.confirmButton {
+  background: var(--blue);
+  color: #fff;
+}
+
+.dangerButton {
+  border-color: #b91c1c;
+  background: #fff;
+  color: #b91c1c;
+}
+
+.confirmButton:hover {
+  background: #1d4ed8;
+}
+
+.dangerButton:hover {
+  background: var(--red-dim);
+}
+
+.ghostButton:disabled,
+.confirmButton:disabled,
+.dangerButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Diálogo de confirmación */
+.dialogOverlay {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: grid;
+  padding: 1rem;
+  background: rgba(8, 12, 16, 0.62);
+  overflow-y: auto;
+  place-items: center;
+}
+
+.dialog {
+  width: min(100%, 520px);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid rgba(15, 22, 33, 0.12);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 24px 64px rgba(8, 12, 16, 0.3);
+}
+
+.dialog h2 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 1.15rem;
+}
+
+.dialogSubject {
+  margin: 0.45rem 0 0;
+  overflow-wrap: anywhere;
+  color: var(--dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.dialogDescription {
+  margin: 0.7rem 0 1.1rem;
+  color: var(--gray);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.dialogError {
+  margin: 0 0 1rem;
+  color: #b91c1c;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.dialogActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .detailLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .requestForm {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .requestBox,
+  .section,
+  .requestCard {
+    padding: 0.9rem;
+  }
+
+  .toolbar > div,
+  .formActions > button,
+  .actions > button,
+  .rowFooter > a,
+  .dialogActions > button {
+    width: 100%;
+  }
+
+  .dialogActions {
+    flex-direction: column-reverse;
+  }
+}

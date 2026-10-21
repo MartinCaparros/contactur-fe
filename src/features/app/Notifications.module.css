@@ -1,0 +1,244 @@
+/* Centro de notificaciones (T19). Reutiliza Directory.module.css para paneles y botones. */
+
+.filters {
+  display: flex;
+  margin: 0 0 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filterButton {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--dark);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* El estado no depende solo del color: el botón activo además lleva borde grueso y marca. */
+.filterButton[aria-pressed="true"] {
+  border: 2px solid var(--blue);
+  background: var(--blue-pale);
+  color: #1d4ed8;
+}
+
+.filterButton[aria-pressed="true"]::before {
+  content: "✓ ";
+}
+
+.filterButton:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.list {
+  display: grid;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  gap: 0.75rem;
+}
+
+.item {
+  display: grid;
+  min-width: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--gray-pale);
+  border-left: 4px solid var(--gray-light);
+  border-radius: 12px;
+  background: #fff;
+  gap: 0.45rem;
+}
+
+.item[data-read="false"] {
+  border-left-color: var(--blue);
+  background: #f8fbff;
+}
+
+.itemHeader {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 0.75rem;
+}
+
+.scope {
+  margin: 0;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 999px;
+  color: #374151;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.readState {
+  display: inline-flex;
+  margin: 0;
+  color: #374151;
+  font-size: 0.74rem;
+  font-weight: 700;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.readState[data-read="false"] {
+  color: #1d4ed8;
+}
+
+.title {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--dark);
+  font-size: 0.98rem;
+}
+
+.description {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--dark);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.meta {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--gray);
+  font-size: 0.74rem;
+}
+
+.actions {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preferences {
+  display: grid;
+  min-width: 0;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-pale);
+  gap: 0.75rem;
+}
+
+.preferences h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.preferencesForm {
+  display: grid;
+  min-width: 0;
+  gap: 1rem;
+}
+
+.fieldset {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-pale);
+  border-radius: 10px;
+  gap: 0.25rem;
+}
+
+.fieldset legend {
+  padding: 0 0.25rem;
+  color: var(--dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.toggleRow {
+  display: grid;
+  min-width: 0;
+  gap: 0.15rem;
+}
+
+.toggle {
+  display: inline-flex;
+  min-height: 44px;
+  color: var(--dark);
+  font-size: 0.82rem;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--blue);
+}
+
+.toggle input[aria-invalid="true"] {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.fixedGroup {
+  display: grid;
+  min-width: 0;
+  gap: 0.4rem;
+}
+
+.fixedGroup h3 {
+  margin: 0.25rem 0 0;
+  color: var(--dark);
+  font-size: 0.82rem;
+}
+
+.fixedList {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.4rem;
+}
+
+.fixedList li {
+  display: grid;
+  min-width: 0;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  background: var(--gray-pale);
+  gap: 0.15rem;
+  font-size: 0.78rem;
+}
+
+.fixedList span {
+  overflow-wrap: anywhere;
+  color: #374151;
+}
+
+/* Insignia del menú: el número también está en el nombre accesible del enlace. */
+.badge {
+  display: inline-flex;
+  min-width: 1.6rem;
+  height: 1.4rem;
+  margin-left: 0.5rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}

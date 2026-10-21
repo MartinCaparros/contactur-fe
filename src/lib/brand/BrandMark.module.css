@@ -1,0 +1,10 @@
+/*
+ * Isotipo oficial (logo-02). Cada header fija la altura con `--brand-mark-height` en su
+ * contenedor; el ancho sale de la proporción del archivo (140 × 92).
+ */
+.mark {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  height: var(--brand-mark-height, 30px);
+}

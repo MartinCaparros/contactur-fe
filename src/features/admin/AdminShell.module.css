@@ -1,0 +1,299 @@
+.shell {
+  min-height: 100dvh;
+  background: var(--gray-pale);
+  color: var(--dark);
+}
+
+.header {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  display: grid;
+  min-height: var(--header-height);
+  padding: 0.5rem clamp(1rem, 3vw, 2rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 12, 16, 0.97);
+  color: var(--white);
+  grid-template-columns: minmax(150px, auto) minmax(0, 1fr) minmax(180px, auto);
+  gap: 1.25rem;
+  align-items: center;
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.scopeTag {
+  justify-self: start;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.18);
+  color: var(--blue-light);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.headerActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.accountName {
+  overflow: hidden;
+  color: var(--gray-light);
+  font-size: 0.74rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.headerActions button {
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.headerActions button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.headerActions button:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 2px;
+}
+
+.layout {
+  display: grid;
+  min-height: calc(100dvh - var(--header-height));
+  grid-template-columns: 250px minmax(0, 1fr);
+}
+
+.sidebar {
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100dvh - var(--header-height));
+  padding: 1.25rem 0.85rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--dark-2);
+  overflow-y: auto;
+}
+
+.sidebarHeading {
+  display: block;
+  margin: 0 0.35rem 0.8rem;
+  color: var(--gray-mid);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.sidebar nav a {
+  display: flex;
+  min-height: 44px;
+  padding: 0.65rem 0.8rem;
+  border-radius: 7px;
+  color: var(--gray-light);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  align-items: center;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a:focus-visible,
+.sidebar nav .activeLink {
+  background: rgba(37, 99, 235, 0.14);
+  color: var(--white);
+}
+
+.sidebar nav a:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: -2px;
+}
+
+.mainContent {
+  min-width: 0;
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+.centerState {
+  display: grid;
+  min-height: calc(100dvh - var(--header-height));
+  padding: 2rem 1rem;
+  color: var(--gray);
+  place-items: center;
+}
+
+.errorNotice,
+.restrictedNotice {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 16px;
+  background: #fff7f7;
+  box-shadow: 0 18px 48px rgba(8, 12, 16, 0.08);
+}
+
+.restrictedNotice {
+  border-color: rgba(249, 115, 22, 0.28);
+  background: var(--white);
+}
+
+.errorNotice h1,
+.restrictedNotice h1 {
+  margin: 0;
+  color: var(--dark);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.errorNotice p,
+.restrictedNotice p {
+  color: var(--gray);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.primaryAction {
+  display: inline-flex;
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.retryAction {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 860px) {
+  .header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .accountName {
+    display: none;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    min-height: 0;
+    height: auto;
+    padding: 0.75rem 1rem;
+    border-right: 0;
+  }
+
+  .sidebarHeading {
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .sidebar nav a {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+  }
+
+  .brand {
+    grid-column: 1;
+  }
+
+  .scopeTag {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .headerActions {
+    min-width: 0;
+    grid-column: 2;
+    grid-row: 1;
+    /* Idioma + "Cerrar sesión" / "Log out" entran junto a la marca sin bajar de 44 px. */
+    gap: 0.5rem;
+  }
+
+  .headerActions button {
+    padding-inline: 0.7rem;
+  }
+
+  .primaryAction {
+    width: 100%;
+  }
+}
+
+/*
+ * Muy angosto (≤ 420 px, p. ej. 360 px): queda solo el isotipo, igual que en la app. El
+ * enlace conserva su nombre accesible ("Ir a Contactur") y la fila entra sin desbordar.
+ */
+@media (max-width: 420px) {
+  .header {
+    padding-inline: 0.75rem;
+  }
+
+  .brandWord {
+    display: none;
+  }
+}

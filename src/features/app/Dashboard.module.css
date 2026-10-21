@@ -1,0 +1,149 @@
+/* Indicadores del Resumen (T21): mismas superficies que las tarjetas del shell. */
+.metrics {
+  display: grid;
+  min-width: 0;
+  margin-top: 1.5rem;
+  gap: 0.9rem;
+}
+
+.heading h2 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 1.05rem;
+}
+
+.heading p {
+  margin: 0.3rem 0 0;
+  color: var(--gray);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.grid {
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  min-width: 0;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--gray-pale);
+  border-radius: 12px;
+  background: #f3f6fa;
+  align-content: start;
+  gap: 0.3rem;
+}
+
+.card dt {
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.value {
+  color: var(--dark);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.hint {
+  color: var(--gray);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.link {
+  display: inline-flex;
+  min-height: 44px;
+  color: #1d4ed8;
+  font-size: 0.74rem;
+  font-weight: 700;
+  align-items: center;
+  text-underline-offset: 3px;
+}
+
+.loading {
+  display: grid;
+}
+
+.skeleton {
+  height: 110px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--gray-pale), #f3f6fa, var(--gray-pale));
+  background-size: 200% 100%;
+  animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
+
+.errorBox {
+  display: grid;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 12px;
+  background: #fff7f7;
+  justify-items: start;
+  gap: 0.5rem;
+}
+
+.errorBox h3 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.errorBox p,
+.empty,
+.staleNote {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.retry,
+.inlineRetry {
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  border-radius: 8px;
+  background: #fff;
+  color: #1d4ed8;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.inlineRetry {
+  margin-left: 0.25rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

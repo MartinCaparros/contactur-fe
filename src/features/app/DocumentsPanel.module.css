@@ -1,0 +1,240 @@
+.documents {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.typeGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.typeCard,
+.currentDocuments {
+  padding: 1.1rem;
+  border: 1px solid var(--gray-pale);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.typeHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.typeHeading h3,
+.currentDocuments h3 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 0.92rem;
+}
+
+.typeHeading p,
+.currentDocuments > p {
+  margin: 0.35rem 0 0;
+  color: var(--gray);
+  font-size: 0.7rem;
+}
+
+.typeHeading > span {
+  flex: 0 0 auto;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: var(--gray-pale);
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.typeHeading > span[data-status="pending"] {
+  background: var(--orange-dim);
+  color: #9a3412;
+}
+
+.typeHeading > span[data-status="approved"] {
+  background: var(--green-dim);
+  color: #166534;
+}
+
+.typeHeading > span[data-status="rejected"] {
+  background: var(--red-dim);
+  color: #991b1b;
+}
+
+.uploadForm {
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.uploadForm label {
+  display: grid;
+  color: var(--dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  gap: 0.35rem;
+}
+
+.uploadForm input,
+.uploadForm select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--dark);
+}
+
+.uploadForm input[type="file"] {
+  padding: 0.55rem;
+}
+
+.uploadForm input:focus,
+.uploadForm select:focus {
+  border-color: var(--blue);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--blue-glow);
+}
+
+.uploadForm button,
+.documentActions button {
+  min-height: 44px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.uploadForm button {
+  align-self: end;
+}
+
+.uploadForm button:disabled,
+.documentActions button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.fieldError,
+.formError,
+.rejection {
+  color: #b91c1c;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.formError,
+.formSuccess {
+  margin: 0;
+  align-self: center;
+}
+
+.formSuccess {
+  color: #166534;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.errorNotice {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 9px;
+  background: #fff1f2;
+  color: #991b1b;
+  font-size: 0.74rem;
+}
+
+.errorNotice p {
+  margin: 0.35rem 0 0;
+}
+
+.currentDocuments ul {
+  display: grid;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.65rem;
+}
+
+.currentDocuments li {
+  display: flex;
+  min-height: 74px;
+  padding: 0.75rem;
+  border: 1px solid var(--gray-pale);
+  border-radius: 9px;
+  background: var(--white);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.currentDocuments li > div:first-child,
+.currentDocuments strong,
+.currentDocuments span,
+.currentDocuments small {
+  min-width: 0;
+}
+
+.currentDocuments strong,
+.currentDocuments span,
+.currentDocuments small {
+  display: block;
+}
+
+.currentDocuments strong {
+  font-size: 0.76rem;
+}
+
+.currentDocuments span {
+  margin-top: 0.2rem;
+  overflow-wrap: anywhere;
+  color: var(--gray);
+  font-size: 0.7rem;
+}
+
+.currentDocuments small {
+  margin-top: 0.25rem;
+  color: var(--gray);
+  font-size: 0.64rem;
+}
+
+.currentDocuments .rejection {
+  color: #991b1b;
+}
+
+.documentActions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.5rem;
+}
+
+.documentActions button:last-child {
+  border-color: rgba(185, 28, 28, 0.35);
+  background: transparent;
+  color: #991b1b;
+}
+
+@media (max-width: 680px) {
+  .typeHeading,
+  .currentDocuments li {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .uploadForm {
+    grid-template-columns: 1fr;
+  }
+
+  .documentActions,
+  .documentActions button {
+    width: 100%;
+  }
+}

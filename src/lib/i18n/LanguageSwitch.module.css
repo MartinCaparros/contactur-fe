@@ -1,0 +1,48 @@
+/*
+ * Selector ES | EN sobre los headers oscuros (mismo lenguaje visual que el ghost button
+ * del original). Los selectores llevan `.switch .option` para ganarle a las reglas
+ * genéricas de botones de cada header (`.headerActions button`, `.header button`).
+ */
+.switch {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.switch .option {
+  position: relative;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 0.55rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--gray-light, #94a3b8);
+  cursor: pointer;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.switch .option + .option {
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.switch .option:hover {
+  color: #fff;
+}
+
+.switch .option:focus-visible {
+  outline: 2px solid var(--blue-bright, #3b82f6);
+  outline-offset: -2px;
+}
+
+.switch .option[aria-pressed="true"] {
+  background: rgba(37, 99, 235, 0.22);
+  color: #fff;
+}
